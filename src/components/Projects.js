@@ -66,7 +66,7 @@ const Projects = () => {
       </h2>
       <div ref={projectsRef} className="projects-grid">
         {projects.map((project, index) => (
-          <article key={index} className={`project-card ${projectsVisible ? 'slide-in-vertical' : ''}`} style={{animationDelay: `${index * 0.15}s`}} role="article">
+          <article key={index} className={`project-card ${projectsVisible ? 'slide-in-vertical' : ''}`} style={{animationDelay: `${index * 0.15}s`}}>
             <figure className="project-image" aria-hidden="true">
               <img src={project.image} alt={project.title} />
             </figure>
