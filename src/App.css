@@ -542,19 +542,13 @@ body::before {
   position: relative;
 }
 
-.skills-container {
-  overflow: hidden;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0 5%;
-}
-
 .skills-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  transition: transform 0.3s ease;
-  width: max-content;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
 }
 
 .skill-category {
@@ -563,8 +557,6 @@ body::before {
   border-radius: 15px;
   padding: 20px;
   height: 280px;
-  width: 280px;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -664,48 +656,29 @@ body::before {
   border-color: var(--accent-secondary);
 }
 
-/* Skills navigation */
-.skills-navigation {
-  position: absolute;
-  top: 50%;
-  left: 2%;
-  right: 2%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-  z-index: 10;
-}
 
-.nav-arrow {
-  background: transparent;
-  border: none;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 32px;
-  font-weight: 900;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 12px;
-  pointer-events: auto;
-}
-
-.nav-arrow:hover {
-  color: var(--accent-primary);
-  transform: scale(1.2);
-}
 
 /* Responsive breakpoints for skills */
 @media (max-width: 1200px) {
-  .skill-category {
-    width: 250px;
-    height: 250px;
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
   .skill-category {
-    width: 220px;
-    height: 220px;
+    height: 250px;
     padding: 15px;
   }
   
@@ -720,8 +693,7 @@ body::before {
 
 @media (max-width: 480px) {
   .skill-category {
-    width: 200px;
-    height: 200px;
+    height: 220px;
     padding: 12px;
   }
   
@@ -779,6 +751,23 @@ body::before {
   font-size: 12px;
   border: 1px solid var(--border-subtle);
   white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-tag:hover {
+  background: var(--accent-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="light"] .skill-tag:hover {
+  background: var(--accent-primary);
+  color: white;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
 }
 
 /* Update project-card styles */

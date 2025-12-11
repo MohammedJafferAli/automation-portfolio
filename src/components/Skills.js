@@ -1,106 +1,103 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Skills = () => {
   const [titleRef, titleVisible] = useScrollAnimation();
-  const [focusedCardIndex, setFocusedCardIndex] = useState(4); // Start with Automation Framework (index 4)
-  const [scrollPosition, setScrollPosition] = useState(0);
-  
-  const getCardWidth = () => {
-    if (window.innerWidth <= 480) return 220; // 200px + 20px gap
-    if (window.innerWidth <= 768) return 240; // 220px + 20px gap
-    if (window.innerWidth <= 1200) return 270; // 250px + 20px gap
-    return 300; // 280px + 20px gap
-  };
-  
-  const getMaxScrollPosition = () => {
-    const containerWidth = window.innerWidth * 0.8;
-    const cardWidth = getCardWidth();
-    const visibleCards = Math.floor(containerWidth / cardWidth);
-    return Math.max(0, skillCategories.length - visibleCards);
-  };
-  
-  const updateScrollPosition = (cardIndex) => {
-    // Always keep Automation Framework (index 4) centered
-    const automationIndex = 4;
-    const cardWidth = getCardWidth();
-    const containerWidth = window.innerWidth * 0.8;
-    const visibleCards = Math.floor(containerWidth / cardWidth);
-    const centerOffset = Math.floor(visibleCards / 2);
-    
-    // Calculate position to center Automation Framework
-    let newScrollPos = automationIndex - centerOffset;
-    
-    // Ensure we don't go negative or beyond valid range
-    const maxScroll = Math.max(0, skillCategories.length - visibleCards);
-    newScrollPos = Math.max(0, Math.min(newScrollPos, maxScroll));
-    
-    setScrollPosition(newScrollPos);
-  };
 
   const skillCategories = [
     {
+      title: "Automation Framework",
+      icon: "🔧",
+      skills: [
+        { name: "Selenium WebDriver", url: "https://selenium.dev" },
+        { name: "Playwright", url: "https://playwright.dev" },
+        { name: "TestNG", url: "https://testng.org" },
+        { name: "Cucumber (BDD)", url: "https://cucumber.io" },
+        { name: "Page Object Model", url: "https://selenium.dev/documentation/test_practices/encouraged/page_object_models/" },
+        { name: "Data-driven Testing", url: "https://testng.org/doc/documentation-main.html#parameters-dataproviders" }
+      ]
+    },
+    {
       title: "Programming Languages",
       icon: "💻",
-      skills: ["Java", "JavaScript", "SQL", "Shell"]
+      skills: [
+        { name: "Java", url: "https://oracle.com/java" },
+        { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+        { name: "SQL", url: "https://www.w3schools.com/sql/" },
+        { name: "Shell", url: "https://www.gnu.org/software/bash/" }
+      ]
     },
     {
       title: "API & Mobile Testing",
       icon: "📱",
-      skills: ["Postman", "Newman", "Charles Proxy", "PerfectO", "Headspin", "Android Emulator", "iOS Simulator"]
-    },
-    {
-      title: "CI/CD & DevOps",
-      icon: "⚙️",
-      skills: ["Jenkins", "GitHub Actions", "Maven", "Git", "GitHub", "GitLab"]
-    },
-    {
-      title: "Test Management",
-      icon: "📊",
-      skills: ["Jira (Xray, Zephyr)", "HP-ALM", "Confluence", "Allure Reports", "Extent Reports", "TestNG Reports"]
-    },
-    {
-      title: "Automation Framework",
-      icon: "🔧",
-      skills: ["Selenium WebDriver", "Playwright", "TestNG", "Cucumber (BDD)", "Page Object Model", "Data-driven Testing"]
+      skills: [
+        { name: "Postman", url: "https://postman.com" },
+        { name: "Newman", url: "https://github.com/postmanlabs/newman" },
+        { name: "Charles Proxy", url: "https://charlesproxy.com" },
+        { name: "PerfectO", url: "https://perfecto.io" },
+        { name: "Headspin", url: "https://headspin.io" },
+        { name: "Android Emulator", url: "https://developer.android.com/studio/run/emulator" },
+        { name: "iOS Simulator", url: "https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device" }
+      ]
     },
     {
       title: "AI-Assisted Development",
       icon: "🤖",
-      skills: ["Amazon Q Developer", "GitHub Copilot", "AI-Enhanced Test Automation"]
+      skills: [
+        { name: "Amazon Q Developer", url: "https://aws.amazon.com/q/developer/" },
+        { name: "GitHub Copilot", url: "https://github.com/features/copilot" },
+        { name: "AI-Enhanced Test Automation", url: "https://www.selenium.dev/blog/2023/ai-and-test-automation/" }
+      ]
+    },
+    {
+      title: "CI/CD & DevOps",
+      icon: "⚙️",
+      skills: [
+        { name: "Jenkins", url: "https://jenkins.io" },
+        { name: "GitHub Actions", url: "https://github.com/features/actions" },
+        { name: "Maven", url: "https://maven.apache.org" },
+        { name: "Git", url: "https://git-scm.com" },
+        { name: "GitHub", url: "https://github.com" },
+        { name: "GitLab", url: "https://gitlab.com" }
+      ]
+    },
+    {
+      title: "Test Management",
+      icon: "📊",
+      skills: [
+        { name: "Jira (Xray, Zephyr)", url: "https://atlassian.com/software/jira" },
+        { name: "HP-ALM", url: "https://www.microfocus.com/en-us/products/alm-quality-center" },
+        { name: "Confluence", url: "https://atlassian.com/software/confluence" },
+        { name: "Allure Reports", url: "https://allurereport.org" },
+        { name: "Extent Reports", url: "https://extentreports.com" },
+        { name: "TestNG Reports", url: "https://testng.org/doc/documentation-main.html#logging" }
+      ]
     },
     {
       title: "Development Tools",
       icon: "🛠️",
-      skills: ["Eclipse", "IntelliJ IDEA", "VS Code", "Android Studio"]
+      skills: [
+        { name: "Eclipse", url: "https://eclipse.org" },
+        { name: "IntelliJ IDEA", url: "https://jetbrains.com/idea" },
+        { name: "VS Code", url: "https://code.visualstudio.com" },
+        { name: "Android Studio", url: "https://developer.android.com/studio" }
+      ]
     },
     {
       title: "Cross-Platform",
       icon: "♿",
-      skills: ["NVDA", "Voiceover", "Talkback", "Cross-browser Testing", "Windows", "macOS"]
+      skills: [
+        { name: "NVDA", url: "https://nvaccess.org" },
+        { name: "Voiceover", url: "https://support.apple.com/guide/voiceover/" },
+        { name: "Talkback", url: "https://support.google.com/accessibility/android/answer/6283677" },
+        { name: "Cross-browser Testing", url: "https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing" },
+        { name: "Windows", url: "https://microsoft.com/windows" },
+        { name: "macOS", url: "https://apple.com/macos" }
+      ]
     }
   ];
 
-  useEffect(() => {
-    updateScrollPosition(4); // Center Automation card on load
-  }, []);
-  
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === 'ArrowLeft') {
-        const newIndex = focusedCardIndex > 0 ? focusedCardIndex - 1 : skillCategories.length - 1;
-        setFocusedCardIndex(newIndex);
-        updateScrollPosition(newIndex);
-      } else if (event.key === 'ArrowRight') {
-        const newIndex = focusedCardIndex < skillCategories.length - 1 ? focusedCardIndex + 1 : 0;
-        setFocusedCardIndex(newIndex);
-        updateScrollPosition(newIndex);
-      }
-    };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [skillCategories.length]);
 
   return (
     <section id="skills" className="section skills">
@@ -110,61 +107,32 @@ const Skills = () => {
       >
         Technical Expertise
       </h2>
-      <div className="skills-container">
-        <div 
-          className="skills-grid"
-          style={{ transform: `translateX(${-scrollPosition * getCardWidth()}px)` }}
-        >
-          {skillCategories.map((category, index) => (
-            <div 
-              key={index} 
-              className={`skill-category ${index === 4 ? 'highlighted' : ''}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onMouseEnter={() => {
-                if (index !== focusedCardIndex) {
-                  setFocusedCardIndex(index);
-                  updateScrollPosition(index);
-                }
-              }}
-            >
+      <div className="skills-grid">
+        {skillCategories.map((category, index) => (
+          <div 
+            key={index} 
+            className="skill-category"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
             <h3>
               <span className="icon">{category.icon}</span>
               {category.title}
             </h3>
             <div className="skill-list">
               {category.skills.map((skill, skillIndex) => (
-                <span key={skillIndex} className="skill-tag">
-                  {skill}
-                </span>
+                <a 
+                  key={skillIndex} 
+                  href={skill.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="skill-tag"
+                >
+                  {skill.name}
+                </a>
               ))}
             </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="skills-navigation">
-        <button 
-          className="nav-arrow left" 
-          onClick={() => {
-            const newIndex = focusedCardIndex > 0 ? focusedCardIndex - 1 : skillCategories.length - 1;
-            setFocusedCardIndex(newIndex);
-            updateScrollPosition(newIndex);
-          }}
-          aria-label="Previous skill category"
-        >
-          ‹
-        </button>
-        <button 
-          className="nav-arrow right" 
-          onClick={() => {
-            const newIndex = focusedCardIndex < skillCategories.length - 1 ? focusedCardIndex + 1 : 0;
-            setFocusedCardIndex(newIndex);
-            updateScrollPosition(newIndex);
-          }}
-          aria-label="Next skill category"
-        >
-          ›
-        </button>
+          </div>
+        ))}
       </div>
     </section>
   );
