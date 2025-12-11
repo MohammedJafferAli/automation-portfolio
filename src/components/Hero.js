@@ -70,7 +70,7 @@ const Hero = () => {
                 <span className="stat-label">Efficiency Gain</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">15+</span>
+                <span className="stat-number">3</span>
                 <span className="stat-label">Frameworks Built</span>
               </div>
               <div className="stat-item">
@@ -78,8 +78,6 @@ const Hero = () => {
                 <span className="stat-label">Certified</span>
               </div>
             </div>
-            
-
           </div>
         </div>
       </div>

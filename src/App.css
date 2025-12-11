@@ -233,6 +233,26 @@ body::before {
 
 .mobile-menu-toggle {
   display: none;
+  font-size: 24px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+[data-theme="light"] .mobile-menu-toggle {
+  background: rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+  [data-theme="light"] .mobile-menu-toggle {
+    background: rgba(148, 163, 184, 0.2);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+  }
 }
 
 /* Hero Section */
@@ -1535,27 +1555,108 @@ body::before {
 
 /* Large Tablet */
 @media (max-width: 1024px) {
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    min-width: 48px;
+    min-height: 48px;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .hero {
+    padding: 120px 5% 0;
+  }
+  
   .hero-content {
     grid-template-columns: 1fr;
     gap: 60px;
     text-align: center;
   }
   
+  .hero-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .hero h1 {
     font-size: 56px;
+    text-align: center;
+  }
+  
+  .hero .subtitle {
+    text-align: center;
+  }
+  
+  .hero .description {
+    text-align: center;
+    max-width: 600px;
+  }
+  
+  .hero-highlights {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .highlight-item {
+    justify-content: center;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .hero-card {
+    width: 380px;
+    height: 480px;
+    padding: 30px;
+  }
+  
+  .card-avatar {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+  }
+  
+  .card-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .stat-item {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .stat-label {
+    font-size: 12px;
+    line-height: 1.3;
   }
   
   .section-title {
     font-size: 40px;
+    text-align: center;
   }
 
   .section {
     padding: 80px 4%;
-  }
-
-  .hero-card {
-    width: 350px;
-    height: 450px;
+    text-align: center;
   }
   
   .about-content {
@@ -1564,14 +1665,94 @@ body::before {
     gap: 50px;
   }
   
+  .about-text {
+    text-align: center;
+  }
+  
+  .skills-grid {
+    justify-items: center;
+  }
+  
+  .projects-grid {
+    justify-items: center;
+  }
+  
   .contact-content {
     grid-template-columns: 1fr;
     gap: 50px;
+    text-align: center;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+  
+  .contact-details {
+    align-items: center;
   }
 }
 
 /* Tablet Portrait */
 @media (max-width: 900px) {
+  .hero {
+    padding: 110px 5% 0;
+  }
+  
+  .hero-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    text-align: center;
+  }
+  
+  .hero .subtitle {
+    text-align: center;
+  }
+  
+  .hero .description {
+    text-align: center;
+    max-width: 500px;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .hero-card {
+    width: 360px;
+    height: 460px;
+    padding: 25px;
+  }
+  
+  .card-avatar {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 18px;
+  }
+  
+  .card-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-item {
+    padding: 8px;
+  }
+  
+  .stat-number {
+    font-size: 22px;
+  }
+  
+  .stat-label {
+    font-size: 11px;
+  }
+  
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -1581,10 +1762,6 @@ body::before {
     grid-template-columns: 1fr;
   }
   
-  .hero h1 {
-    font-size: 48px;
-  }
-  
   .section {
     padding: 70px 5%;
   }
@@ -1592,14 +1769,34 @@ body::before {
 
 /* Large Mobile / Small Tablet */
 @media (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: block;
+  .hero {
+    padding: 100px 5% 0;
   }
-
-  .nav-menu {
-    display: none;
+  
+  .hero-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-
+  
+  .hero h1 {
+    text-align: center;
+  }
+  
+  .hero .subtitle {
+    text-align: center;
+  }
+  
+  .hero .description {
+    text-align: center;
+    max-width: 400px;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
   .nav-menu.mobile-open {
     display: flex;
     position: fixed;
@@ -1619,8 +1816,8 @@ body::before {
   }
 
   .hero-card {
-    width: 320px;
-    height: 420px;
+    width: 340px;
+    height: 440px;
     padding: 25px;
   }
 
@@ -1662,9 +1859,21 @@ body::before {
 
 /* Mobile */
 @media (max-width: 640px) {
+  .hero {
+    padding: 100px 5% 0;
+  }
+  
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    justify-items: center;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .skill-category {
+    width: 100%;
+    max-width: 320px;
   }
   
   .hero h1 {
@@ -1672,19 +1881,37 @@ body::before {
   }
   
   .hero-card {
-    width: 280px;
-    height: 380px;
+    width: 300px;
+    height: 420px;
     padding: 20px;
   }
 
   .card-avatar {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 15px;
   }
   
   .card-stats {
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-item {
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 2px;
+  }
+  
+  .stat-label {
+    font-size: 11px;
+    line-height: 1.2;
   }
   
   .section {
@@ -1717,7 +1944,15 @@ body::before {
 /* Small Mobile */
 @media (max-width: 480px) {
   .hero {
-    padding: 76px 3% 0;
+    padding: 110px 3% 0;
+  }
+  
+  .skills-grid {
+    max-width: 300px;
+  }
+  
+  .skill-category {
+    max-width: 280px;
   }
   
   .hero h1 {
@@ -1733,30 +1968,49 @@ body::before {
   }
   
   .hero-card {
-    width: 260px;
-    height: 350px;
-    padding: 18px;
+    width: 280px;
+    height: 380px;
+    padding: 16px;
   }
 
   .card-avatar {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
+    margin-bottom: 12px;
   }
   
   .card-title {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 4px;
   }
   
   .card-role {
-    font-size: 14px;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  
+  .card-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .stat-item {
+    padding: 6px 4px;
+    text-align: center;
   }
   
   .stat-number {
-    font-size: 24px;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 2px;
+    font-weight: 700;
   }
   
   .stat-label {
-    font-size: 12px;
+    font-size: 10px;
+    line-height: 1.1;
+    word-wrap: break-word;
   }
   
   .section {
@@ -1822,15 +2076,49 @@ body::before {
     font-size: 32px;
   }
   
+  .skills-grid {
+    max-width: 280px;
+  }
+  
+  .skill-category {
+    max-width: 260px;
+  }
+  
   .hero-card {
-    width: 240px;
-    height: 320px;
-    padding: 15px;
+    width: 260px;
+    height: 350px;
+    padding: 14px;
   }
   
   .card-avatar {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .card-role {
+    font-size: 12px;
+  }
+  
+  .card-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  
+  .stat-item {
+    padding: 4px 2px;
+  }
+  
+  .stat-number {
+    font-size: 16px;
+  }
+  
+  .stat-label {
+    font-size: 9px;
   }
   
   .section-title {

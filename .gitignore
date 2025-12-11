@@ -117,3 +117,29 @@ videos/
 
 # Local development
 .local
+
+# Netlify
+.netlify/
+
+# Package lock files (choose one)
+package-lock.json
+yarn.lock
+
+# Editor directories and files
+.vscode/settings.json
+.history/
+
+# MacOS
+.AppleDouble
+.LSOverride
+
+# Windows
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# Temporary files
+*.tmp
+*.temp
