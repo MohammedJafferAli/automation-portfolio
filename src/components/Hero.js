@@ -13,12 +13,27 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1>Mohammed<br />Jaffer Ali</h1>
-          <p className="subtitle">Senior Quality Assurance Engineer</p>
+          <p className="subtitle">ISTQB Certified Senior QA Engineer | Test Automation Expert</p>
           <p className="description">
-            ISTQB certified with 7+ years of expertise in test automation and quality assurance. 
-            Specialized in designing scalable automation frameworks and delivering secure, 
-            high-quality solutions.
+            Passionate Senior QA with 7+ years of expertise in Web, Mobile API Testing using both Automation and Manual approaches.
+            Currently delivering quality solutions at TechMahindra for British Telecommunication Group. 
+            Specialized in Selenium WebDriver, Playwright, Appium, and AI-assisted automation frameworks 
+            that improve efficiency by 30% while maintaining 100% on-time delivery.
           </p>
+          <div className="hero-highlights">
+            <div className="highlight-item">
+              <span className="highlight-icon">🏆</span>
+              <span className="highlight-text">ISTQB Foundation Level Certified</span>
+            </div>
+            <div className="highlight-item">
+              <span className="highlight-icon">🚀</span>
+              <span className="highlight-text">TechMahindra - British Telecom Project</span>
+            </div>
+            <div className="highlight-item">
+              <span className="highlight-icon">⚡</span>
+              <span className="highlight-text">AI-Assisted Automation Expert</span>
+            </div>
+          </div>
           <div className="cta-buttons">
             <button 
               className="btn btn-primary"
@@ -55,12 +70,12 @@ const Hero = () => {
                 <span className="stat-label">Efficiency Gain</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">50+</span>
-                <span className="stat-label">Projects</span>
+                <span className="stat-number">15+</span>
+                <span className="stat-label">Frameworks Built</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">100%</span>
-                <span className="stat-label">On-Time Delivery</span>
+                <span className="stat-number">ISTQB</span>
+                <span className="stat-label">Certified</span>
               </div>
             </div>
             

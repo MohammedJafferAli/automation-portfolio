@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -57,6 +57,12 @@
     <title>Mohammed Jaffer Ali - Senior QA Engineer | ISTQB Certified | Test Automation Expert</title>
   </head>
   <body>
+    <script>
+      // Ensure dark theme is set immediately to prevent flash
+      const savedTheme = localStorage.getItem('theme');
+      const theme = savedTheme || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>

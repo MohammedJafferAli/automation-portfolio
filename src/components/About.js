@@ -27,21 +27,27 @@ const About = () => {
           ref={textRef}
           className={`about-text ${textVisible ? 'slide-in-right visible' : 'slide-in-right'}`}
         >
-          <h3>Delivering Quality Through Innovation</h3>
+          <h3>Transforming Quality Assurance Through Innovation</h3>
           <p>
-            ISTQB certified Senior QA Engineer with 7+ years of comprehensive experience in test automation 
-            and quality assurance. I specialize in designing scalable automation frameworks aligned with 
-            system architecture principles, ensuring maintainability and performance across diverse projects.
+            <strong>ISTQB Certified Senior QA Engineer</strong> with 7+ years of comprehensive experience in test automation, 
+            API testing, and mobile automation. Currently serving as a key contributor at <strong>TechMahindra Limited</strong> 
+            for the British Telecommunication Group, where I architect and implement cutting-edge automation solutions.
           </p>
           <p>
-            My expertise spans developing reusable libraries, custom utilities, and implementing 
-            AI-assisted automation solutions. I've successfully improved test efficiency by 30% and 
-            maintained a 100% on-time project delivery record through exceptional time management.
+            <strong>Technical Excellence:</strong> Expert in Selenium WebDriver, Playwright, Appium, TestNG, and Cucumber BDD frameworks. 
+            I've designed 15+ scalable automation frameworks with reusable libraries and custom utilities, 
+            achieving a remarkable <strong>30% improvement in test efficiency</strong> while maintaining 
+            <strong>100% on-time project delivery</strong>.
           </p>
           <p>
-            Currently working with TechMahindra Limited for British Telecommunication Group, I leverage 
-            cutting-edge technologies including Amazon Q Developer and GitHub Copilot to accelerate 
-            test automation development and mentor teams for enhanced productivity.
+            <strong>AI-Powered Innovation:</strong> Pioneering the integration of AI tools like Amazon Q Developer 
+            and GitHub Copilot in test automation development. My approach combines traditional QA methodologies 
+            with modern AI assistance, accelerating development cycles and enhancing team productivity.
+          </p>
+          <p>
+            <strong>Leadership & Mentorship:</strong> Passionate about knowledge sharing and team development. 
+            I regularly mentor junior QA engineers, conduct technical workshops, and contribute to establishing 
+            best practices that elevate overall team performance and project quality standards.
           </p>
         </div>
       </div>
